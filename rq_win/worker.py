@@ -42,7 +42,7 @@ class WindowsWorker(rq.Worker):
         return super(WindowsWorker, self).work(burst)
 
 
-    def execute_job(self, job):
+    def execute_job(self, job, queue):
         """Spawns a work horse to perform the actual work and passes it a job.
         The worker will wait for the work horse and make sure it executes
         within the given timeout bounds, or will end the work horse with
